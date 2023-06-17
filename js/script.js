@@ -42,14 +42,14 @@ const products = async (url) => {
     for (const iterator of maket.children) {
       iterator.addEventListener('click', (e) => {
         maketRight.innerHTML = ``
+        maketRight.style.transform = "translateX(-300px)"
         let keys = e.target.innerText
         let categoriesElems = async () => {
           let request = await fetch(`https://dummyjson.com/products/category/${keys}`)
           let response = await request.json()
           let result = Object.values(response)
           result[0].forEach(item => {
-            maketRight.style.width = '200px';
-            maketRight.style.padding = '80px 40px';
+        maketRight.style.transform = "translateX(0)"
             // console.log(item.title);
             let boxAroundCategories = document.createElement('p')
             boxAroundCategories.classList.add('boxAroundCategories')

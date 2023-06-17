@@ -10,26 +10,36 @@ body{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 80px;
+  padding: 80px 60px 80px 90px;
   background-color: #6D5D6E;
+  z-index: 5;
 }
 .maket p::first-letter {
   text-transform: uppercase;
 }
 .maket p {
   cursor: pointer;
+  padding: 5px 10px;
+  background-color: #F4EEE0;
+  border-radius: 20px;
+  text-align: center;
 }
 .maket-right{
-  transition: 0.2s ease-in-out;
-  width: 0;
+  transition: 0.5s ease-in-out;
+  transform: translateX(-300px);
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0;
+  padding: 80px 40px;
   background-color: #4F4557;
 }
 .maket-right p {
   cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #6D5D6E;
 }
 .flex-cont{
   width: 500px;
