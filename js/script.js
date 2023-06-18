@@ -1,23 +1,3 @@
-// let email = document.querySelector('.email')
-// let password = document.querySelector('.password')
-// let send = document.querySelector('.send')
-// let somePassword;
-// let someEmail;
-// send.addEventListener('click', () => {
-//     somePassword = password.value;
-//     someEmail = email.value;
-//     let xhr = new XMLHttpRequest()
-//     console.log(xhr);
-//     xhr.open('POST', 'https://reqres.in/api/register');
-//     xhr.setRequestHeader('Content-Type', 'application/json');
-//     let some222 = JSON.stringify({
-//         "email": "eve.holt@reqres.in",
-//         "password": "poxos",
-//     })
-//     xhr.send(some222)
-// })
-
-
 let maket = document.querySelector('.maket')
 let maketRight = document.querySelector('.maket-right')
 let flex = document.querySelector('.flex-cont')
@@ -49,8 +29,9 @@ const products = async (url) => {
           let response = await request.json()
           let result = Object.values(response)
           result[0].forEach(item => {
-        maketRight.style.transform = "translateX(0)"
-            // console.log(item.title);
+            setTimeout(() => {
+              maketRight.style.transform = "translateX(0)"
+            }, 700)
             let boxAroundCategories = document.createElement('p')
             boxAroundCategories.classList.add('boxAroundCategories')
             maketRight.append(boxAroundCategories)
