@@ -21,7 +21,9 @@ const products = async (url) => {
   function createBoxRight() {
     for (const iterator of maket.children) {
       iterator.addEventListener('click', (e) => {
-        maketRight.innerHTML = ``
+        setTimeout(() => {
+          maketRight.innerHTML = ``
+        }, 700)
         maketRight.style.transform = "translateX(-300px)"
         let keys = e.target.innerText
         let categoriesElems = async () => {
@@ -29,15 +31,15 @@ const products = async (url) => {
           let response = await request.json()
           let result = Object.values(response)
           result[0].forEach(item => {
-            setTimeout(() => {
-              maketRight.style.transform = "translateX(0)"
-            }, 700)
             let boxAroundCategories = document.createElement('p')
             boxAroundCategories.classList.add('boxAroundCategories')
-            maketRight.append(boxAroundCategories)
-            boxAroundCategories.innerText = item.title
+            setTimeout(() => {
+              maketRight.style.transform = "translateX(0)"
+              maketRight.append(boxAroundCategories)
+              boxAroundCategories.innerText = item.title
+              createElementBox()
+            }, 700)
           })
-          createElementBox()
         }
         categoriesElems()
 
